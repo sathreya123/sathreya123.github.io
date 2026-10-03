@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjana Athreya | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8f6f3;
+            color: #2d2d2d;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+
+        nav {
+            background: #ffffff;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e8e3de;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 19px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #444;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #9a765c;
+        }
+
+        /* Hero */
+
+        .hero {
+            min-height: 78vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 8%;
+            background: #f1e9e2;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: 68px;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            color: #252525;
+        }
+
+        .hero h2 {
+            font-size: 20px;
+            font-weight: 400;
+            color: #8c6c54;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #292929;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 3px;
+        }
+
+        .button:hover {
+            background: #8c6c54;
+        }
+
+        /* Sections */
+
+        section {
+            padding: 85px 8%;
+        }
+
+        .section-title {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            font-weight: 400;
+            margin-bottom: 35px;
+            color: #292929;
+        }
+
+        /* About */
+
+        #about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 800px;
+            font-size: 17px;
+            color: #5b5b5b;
+        }
+
+        /* Skills */
+
+        #skills {
+            background: #f8f6f3;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            max-width: 850px;
+        }
+
+        .skill {
+            background: white;
+            border: 1px solid #e2dcd6;
+            padding: 11px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* Projects */
+
+        #projects {
+            background: white;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            padding: 30px;
+            background: #f8f6f3;
+            border: 1px solid #e4ded8;
+            border-radius: 6px;
+        }
+
+        .project-label {
+            font-size: 12px;
+            color: #9a765c;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .project h3 {
+            font-size: 21px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            color: #626262;
+            font-size: 15px;
+        }
+
+        /* Experience */
+
+        #experience {
+            background: #f1e9e2;
+        }
+
+        .experience {
+            max-width: 850px;
+        }
+
+        .job {
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #d8cdc4;
+        }
+
+        .job:last-child {
+            border-bottom: none;
+        }
+
+        .job h3 {
+            font-size: 20px;
+            margin-bottom: 3px;
+        }
+
+        .job h4 {
+            color: #8c6c54;
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        .job p {
+            color: #555;
+            font-size: 15px;
+        }
+
+        /* Contact */
+
+        #contact {
+            background: white;
+            text-align: center;
+        }
+
+        .contact-text {
+            max-width: 600px;
+            margin: 0 auto 25px;
+            color: #666;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .contact-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-links a:hover {
+            color: #9a765c;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #292929;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            font-size: 13px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 800px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero {
+                min-height: 70vh;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero h2 {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 65px 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+        <div class="logo">Sanjana Athreya</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Personal Statement -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Sanjana Athreya</h1>
+
+            <h2>Finance Student | Business | Consumer Insights</h2>
+
+            <p>
+                I am a Finance student at Rutgers University with experience
+                in financial analysis, market research, and consumer insights,
+                interested in the intersection of business, beauty, and fashion.
+            </p>
+
+            <a href="#projects" class="button">
+                View My Work
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <p class="about-content">
+            I am currently pursuing a Bachelor of Science in Business
+            Administration with a concentration in Finance at Rutgers Business
+            School. Through my internships, coursework, and retail experience,
+            I have developed experience in financial analysis, market research,
+            and understanding consumer behavior. I am especially interested
+            in opportunities that connect business and finance with the beauty
+            and fashion industries.
+        </p>
+
+    </section>
+
+
+    <!-- Skills -->
+
+    <section id="skills">
+
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills">
+
+            <div class="skill">Financial Analysis</div>
+            <div class="skill">Excel &amp; Financial Modeling</div>
+            <div class="skill">Market Research</div>
+            <div class="skill">Consumer Insights</div>
+            <div class="skill">Trend Analysis</div>
+            <div class="skill">Data Analysis</div>
+            <div class="skill">QuickBooks</div>
+            <div class="skill">Financial Reporting</div>
+            <div class="skill">Client Service</div>
+            <div class="skill">Problem Solving</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+
+    <section id="projects">
+
+        <h2 class="section-title">Projects</h2>
+
+        <div class="projects">
+
+
+            <div class="project">
+
+                <div class="project-label">
+                    Banking Strategy
+                </div>
+
+                <h3>Commercial Banking Strategy</h3>
+
+                <p>
+                    Worked on a team project at Maspeth Federal Savings focused
+                    on repositioning the institution as a commercial bank.
+                    Conducted research, participated in stakeholder interviews,
+                    and helped develop a final presentation with recommendations
+                    for senior leadership.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-label">
+                    Investment Analysis
+                </div>
+
+                <h3>Investment Portfolio Analysis</h3>
+
+                <p>
+                    Analyzed equities, ETFs, and mutual funds within a
+                    $2.5 million portfolio. Conducted market research and
+                    financial statement analysis while creating Excel
+                    benchmarking reports to evaluate valuation, diversification,
+                    risk, and asset allocation.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-label">
+                    Consumer Insights
+                </div>
+
+                <h3>Retail &amp; Consumer Insights</h3>
+
+                <p>
+                    At Ulta Beauty, work directly with customers through
+                    product consultations while tracking product sales and
+                    inventory. Use purchasing patterns and product performance
+                    to better understand consumer behavior and identify
+                    beauty trends.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- Experience -->
+
+    <section id="experience">
+
+        <h2 class="section-title">Experience</h2>
+
+        <div class="experience">
+
+
+            <div class="job">
+
+                <h3>President's Office Intern</h3>
+
+                <h4>
+                    Maspeth Federal Savings &middot; June 2026 &ndash; August 2026
+                </h4>
+
+                <p>
+                    Supported the President's Office on executive-level and
+                    cross-functional initiatives. Created executive
+                    presentations and Excel analyses for the Board of Directors
+                    and participated in C-suite and committee meetings.
+                </p>
+
+            </div>
+
+
+            <div class="job">
+
+                <h3>Accounting &amp; Finance Intern</h3>
+
+                <h4>
+                    Axletree Solutions Inc. &middot; May 2025 &ndash; August 2025
+                </h4>
+
+                <p>
+                    Worked with the VP of Finance on financial reporting,
+                    forecasting support, bank and credit account
+                    reconciliations, and accounts receivable for more than
+                    50 clients.
+                </p>
+
+            </div>
+
+
+            <div class="job">
+
+                <h3>Investment &amp; Finance Intern</h3>
+
+                <h4>
+                    Athreya, Inc. &middot; May 2024 &ndash; August 2024
+                </h4>
+
+                <p>
+                    Conducted research on equities, ETFs, and mutual funds
+                    within a $2.5 million portfolio and created Excel reports
+                    used to evaluate valuation, diversification, risk,
+                    and allocation.
+                </p>
+
+            </div>
+
+
+            <div class="job">
+
+                <h3>Beauty Advisor</h3>
+
+                <h4>
+                    Ulta Beauty &middot; March 2024 &ndash; Present
+                </h4>
+
+                <p>
+                    Provide personalized beauty consultations and use product
+                    knowledge and customer interactions to understand
+                    purchasing patterns, product performance, and consumer
+                    preferences.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <h2 class="section-title">Let's Connect</h2>
+
+        <p class="contact-text">
+            I am always interested in connecting with students,
+            professionals, and potential employers.
+        </p>
+
+        <div class="contact-links">
+
+            <a href="https://github.com/sathreya123" target="_blank" rel="noopener noreferrer">
+                GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+        &copy; 2026 Sanjana Athreya
+    </footer>
+
+</body>
+</html>
